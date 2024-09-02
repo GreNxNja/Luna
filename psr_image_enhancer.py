@@ -48,7 +48,7 @@ def enhance_psr_image(image_path, gamma=1.2, sharpen_strength=0.5):
     return final_enhanced
 
 # Example usage
-input_image_path = 'psr_image.png'
+input_image_path = r'assests\psr_image.png'
 enhanced_image = enhance_psr_image(input_image_path, gamma=1.2, sharpen_strength=0.5)
 
 # Save the result
