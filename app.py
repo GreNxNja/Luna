@@ -19,34 +19,42 @@ class PSREnhancerApp(QMainWindow):
         self.setStyleSheet("""
             QMainWindow {
                 background-color: #2c3e50;
+                color: #ecf0f1;
             }
+
             QLabel {
                 color: #ecf0f1;
                 font-size: 14px;
                 font-weight: bold;
+                padding: 5px;
             }
+
             QPushButton {
                 background-color: #3498db;
                 color: white;
                 border: none;
-                padding: 12px 20px;
+                padding: 10px 20px;
                 font-size: 16px;
                 font-weight: bold;
                 border-radius: 5px;
                 margin: 5px;
             }
+
             QPushButton:hover {
                 background-color: #2980b9;
             }
+
             QPushButton:pressed {
                 background-color: #21618c;
             }
+
             QSlider::groove:horizontal {
                 border: 1px solid #bbb;
                 background: #34495e;
                 height: 10px;
                 border-radius: 4px;
             }
+
             QSlider::sub-page:horizontal {
                 background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,
                     stop: 0 #3498db, stop: 1 #2980b9);
@@ -54,6 +62,7 @@ class PSREnhancerApp(QMainWindow):
                 height: 10px;
                 border-radius: 4px;
             }
+
             QSlider::handle:horizontal {
                 background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
                     stop:0 #ecf0f1, stop:1 #bdc3c7);
@@ -63,25 +72,86 @@ class PSREnhancerApp(QMainWindow):
                 margin-bottom: -5px;
                 border-radius: 9px;
             }
+
             QSlider::handle:horizontal:hover {
                 background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
                     stop:0 #f39c12, stop:1 #e67e22);
             }
+
             QGroupBox {
                 border: 2px solid #3498db;
                 border-radius: 5px;
                 margin-top: 10px;
                 font-weight: bold;
                 color: #ecf0f1;
+                padding: 10px;
             }
+
             QGroupBox::title {
                 subcontrol-origin: margin;
                 left: 10px;
-                padding: 0 3px 0 3px;
+                padding: 0 5px;
             }
+
             QStatusBar {
                 color: #ecf0f1;
                 font-weight: bold;
+                background-color: #34495e;
+                padding: 5px;
+            }
+
+            QToolTip {
+                background-color: #34495e;
+                color: #ecf0f1;
+                border: 1px solid #2c3e50;
+                padding: 5px;
+            }
+
+            #imageLabel {
+                background-color: #34495e;
+                border: 2px solid #3498db;
+                border-radius: 10px;
+                padding: 10px;
+            }
+
+            QMainWindow::separator {
+                background-color: #34495e;
+                width: 1px;
+                height: 1px;
+            }
+
+            QScrollBar:vertical {
+                border: none;
+                background: #34495e;
+                width: 10px;
+                margin: 0px 0px 0px 0px;
+            }
+
+            QScrollBar::handle:vertical {
+                background: #3498db;
+                min-height: 20px;
+                border-radius: 5px;
+            }
+
+            QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+                height: 0px;
+            }
+
+            QScrollBar:horizontal {
+                border: none;
+                background: #34495e;
+                height: 10px;
+                margin: 0px 0px 0px 0px;
+            }
+
+            QScrollBar::handle:horizontal {
+                background: #3498db;
+                min-width: 20px;
+                border-radius: 5px;
+            }
+
+            QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+                width: 0px;
             }
         """)
 
@@ -143,14 +213,7 @@ class PSREnhancerApp(QMainWindow):
         # Image display
         self.imageLabel = QLabel(self)
         self.imageLabel.setAlignment(Qt.AlignCenter)
-        self.imageLabel.setStyleSheet("""
-            QLabel {
-                background-color: #34495e;
-                border: 2px solid #7f8c8d;
-                border-radius: 10px;
-                padding: 10px;
-            }
-        """)
+        self.imageLabel.setObjectName("imageLabel")
         main_layout.addWidget(self.imageLabel)
 
         container = QWidget()
